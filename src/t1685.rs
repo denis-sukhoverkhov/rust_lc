@@ -5,7 +5,6 @@
 struct Solution;
 
 impl Solution {
-
     #[allow(dead_code)]
     pub fn get_sum_absolute_differences(nums: Vec<i32>) -> Vec<i32> {
         if nums.is_empty() {
