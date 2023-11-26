@@ -18,18 +18,11 @@ impl Solution {
 
         let mut result = vec![0; nums.len()];
 
-        // nums = [1,4,6,8,10]
-        // prefix_sum = [1,5,11,19,29]
-        // i = 1
-        // 4 - 1 + 4 - 4 + 6 - 4 + 8 - 4 + 10 - 4
-        // (i + 1) * 4 - (1 + 4) - first part
-        // (6 + 8 + 10) - (n - (i+1) * 4) - second part
-        // (i + 1) * nums[i] - prefix_sum[i] + (prefix_sum[n-1] - prefix_sum[i]) - (n - (i+1)) * nums[i]
-
         for i in 0..nums.len() {
             let len_first_part = (i + 1) as i32;
 
             let first_part = len_first_part * nums[i] - prefix_sum[i];
+
             let postfix_sum = prefix_sum[nums.len() - 1] - prefix_sum[i];
 
             let len_second_part = nums.len() as i32 - len_first_part;
@@ -42,7 +35,6 @@ impl Solution {
     }
 }
 
-// write unit tests to test above fn
 #[cfg(test)]
 mod tests {
     use super::*;
