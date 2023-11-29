@@ -40,6 +40,11 @@ mod tests {
     use super::*;
 
     #[test]
+    fn test_get_sum_absolute_differences_empty_vec() {
+        assert_eq!(Solution::get_sum_absolute_differences(vec![]), vec![]);
+    }
+
+    #[test]
     fn test_get_sum_absolute_differences() {
         assert_eq!(
             Solution::get_sum_absolute_differences(vec![2, 3, 5]),

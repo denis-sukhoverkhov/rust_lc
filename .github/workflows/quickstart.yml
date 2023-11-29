@@ -1,6 +1,6 @@
 on: [push, pull_request]
 
-name: Quickstart
+name: Tests
 
 jobs:
   check:
@@ -11,17 +11,11 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
       - run: cargo check --all-features
 
-  test:
-    name: cargo test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: dtolnay/rust-toolchain@stable
-      - run: cargo test --all-features
-
   lints:
     name: Lints
     runs-on: ubuntu-latest
+    needs:
+      - check
     steps:
       - name: Checkout sources
         uses: actions/checkout@v4
@@ -35,3 +29,13 @@ jobs:
       - run: |
           cargo fmt --all -- --check
           cargo clippy -- -D warnings
+    
+  test:
+    name: cargo test
+    runs-on: ubuntu-latest
+    needs:
+      - lints
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: cargo test --all-features
