@@ -22,6 +22,10 @@ impl TreeNode {
 pub const NONE: i32 = -10000;
 
 pub fn build_tree_from_vec(v: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
+    if v.is_empty() {
+        return None;
+    }
+
     let mut queue: VecDeque<Option<Rc<RefCell<TreeNode>>>> = VecDeque::new();
     let first_node: Option<Rc<RefCell<TreeNode>>> =
         Some(Rc::new(RefCell::new(TreeNode::new(v[0]))));
@@ -51,6 +55,10 @@ pub fn build_tree_from_vec(v: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
 }
 
 pub fn tree_to_str(root: Option<Rc<RefCell<TreeNode>>>) -> String {
+    if root.is_none() {
+        return String::new();
+    }
+
     let mut queue: VecDeque<Option<Rc<RefCell<TreeNode>>>> = VecDeque::new();
     queue.push_back(root);
 
@@ -92,20 +100,27 @@ mod tests {
 
     #[test]
     fn test_build_tree_from_vec_1() {
+        let nodes = vec![];
+        let root = build_tree_from_vec(nodes);
+        assert_eq!(tree_to_str(root), "");
+    }
+
+    #[test]
+    fn test_build_tree_from_vec_2() {
         let nodes = vec![1, 2, 3, 4];
         let root = build_tree_from_vec(nodes);
         assert_eq!(tree_to_str(root), "1,2,3,4");
     }
 
     #[test]
-    fn test_build_tree_from_vec_2() {
+    fn test_build_tree_from_vec_3() {
         let nodes = vec![1, 2, 3, NONE, 4];
         let root = build_tree_from_vec(nodes);
         assert_eq!(tree_to_str(root), "1,2,3,-10000,4");
     }
 
     #[test]
-    fn test_build_tree_from_vec_3() {
+    fn test_build_tree_from_vec_4() {
         let nodes = vec![1, 2, 3, NONE, NONE, 4];
         let root = build_tree_from_vec(nodes);
         assert_eq!(tree_to_str(root), "1,2,3,-10000,-10000,4");
