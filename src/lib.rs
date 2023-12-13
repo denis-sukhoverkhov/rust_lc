@@ -3,6 +3,7 @@ pub mod t1160;
 pub mod t1266;
 pub mod t1287;
 pub mod t1464;
+pub mod t1582;
 pub mod t1662;
 pub mod t1685;
 pub mod t1688;
