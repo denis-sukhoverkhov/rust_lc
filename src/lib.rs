@@ -2,6 +2,7 @@ pub mod helpers;
 pub mod t1160;
 pub mod t1266;
 pub mod t1287;
+pub mod t1422;
 pub mod t1436;
 pub mod t1464;
 pub mod t1582;
