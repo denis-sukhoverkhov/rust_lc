@@ -28,7 +28,6 @@ impl Solution {
             {
                 dp[i] += dp[i + 2];
             }
-
         }
 
         dp[0]
