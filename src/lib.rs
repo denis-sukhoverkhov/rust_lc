@@ -13,6 +13,7 @@ pub mod t1582;
 pub mod t1662;
 pub mod t1685;
 pub mod t1688;
+pub mod t1704;
 pub mod t1716;
 pub mod t1727;
 pub mod t1758;
