@@ -34,6 +34,7 @@ pub mod t2610;
 pub mod t2706;
 pub mod t2870;
 pub mod t300;
+pub mod t380;
 pub mod t446;
 pub mod t455;
 pub mod t606;
