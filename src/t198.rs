@@ -5,9 +5,8 @@
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn rob(nums: Vec<i32>) -> i32 {
-        let l = nums.len();
-
         let (mut r1, mut r2) = (0, 0);
         for i in nums.iter() {
             let tmp = (i + r1).max(r2);
