@@ -17,7 +17,7 @@ impl Solution {
             r: i32,
             c: i32,
             rows: i32,
-            m: &Vec<Vec<i32>>,
+            m: &[Vec<i32>],
             cache: &mut HashMap<(i32, i32), i32>,
         ) -> i32 {
             if r == rows {
