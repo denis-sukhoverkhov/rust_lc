@@ -21,10 +21,12 @@ impl MyQueue {
         }
     }
 
+    #[allow(dead_code)]
     fn push(&mut self, x: i32) {
         self.back_stack.push(x);
     }
 
+    #[allow(dead_code)]
     fn pop(&mut self) -> i32 {
         if self.front_stack.is_empty() {
             while let Some(x) = self.back_stack.pop() {
@@ -35,6 +37,7 @@ impl MyQueue {
         self.front_stack.pop().unwrap()
     }
 
+    #[allow(dead_code)]
     fn peek(&mut self) -> i32 {
         if self.front_stack.is_empty() {
             while let Some(x) = self.back_stack.pop() {
@@ -45,6 +48,7 @@ impl MyQueue {
         *self.front_stack.last().unwrap()
     }
 
+    #[allow(dead_code)]
     fn empty(&self) -> bool {
         self.front_stack.is_empty() && self.back_stack.is_empty()
     }
