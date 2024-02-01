@@ -18,7 +18,6 @@ impl Solution {
 
             while let Some((j, v)) = stack.pop() {
                 if v < *t {
-                    // stack.pop();
                     ans[j] = (i - j) as i32;
                 } else {
                     stack.push((j, v));
