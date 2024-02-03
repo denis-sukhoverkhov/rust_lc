@@ -12,7 +12,7 @@ impl Solution {
 
         let res = (len_low..=len_high).fold(vec![], |mut v, i| {
             let nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9'];
-
+ 
             let mut val = nums
                 .windows(i)
                 .map(|a| a.iter().collect::<String>().parse::<i32>().unwrap())
