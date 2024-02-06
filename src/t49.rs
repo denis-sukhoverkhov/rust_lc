@@ -54,8 +54,8 @@ mod tests {
 
         let mut actual = Solution::group_anagrams(strs);
 
+        // for tests stabilisation
         actual.sort_by_key(|a| a.len());
-
         for a in actual.iter_mut() {
             a.sort()
         }
