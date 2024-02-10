@@ -55,4 +55,12 @@ mod tests {
 
         assert_eq!(Solution::largest_divisible_subset(nums), expected);
     }
+
+    #[test]
+    fn test_largest_divisible_subset_3() {
+        let nums = vec![3, 4, 16, 8];
+        let expected = vec![16, 8, 4];
+
+        assert_eq!(Solution::largest_divisible_subset(nums), expected);
+    }
 }
