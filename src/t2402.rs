@@ -18,7 +18,7 @@ impl Solution {
         meetings.sort_unstable_by_key(|m| m.0);
 
         let mut occupied = BinaryHeap::new(); // (end, room)
-        let mut free = (0..n).map(|v| Reverse(v)).collect::<BinaryHeap<_>>();
+        let mut free = (0..n).map(Reverse).collect::<BinaryHeap<_>>();
         let mut count = vec![0; n];
 
         for (start, mut end) in meetings {
