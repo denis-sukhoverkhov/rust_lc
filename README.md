@@ -5,3 +5,5 @@
 # Interview questions
 
 [Basic Rust interview questions](https://zerotomastery.io/blog/rust-interview-questions-and-answers/)
+
+[Rust Journey](https://t.me/rust_journey)
