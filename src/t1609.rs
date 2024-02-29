@@ -14,44 +14,45 @@ impl Solution {
     pub fn is_even_odd_tree(root: Option<Rc<RefCell<TreeNode>>>) -> bool {
         let mut level_nums = HashMap::new();
 
-        fn dfs(
-            root: Option<Rc<RefCell<TreeNode>>>,
-            l: i32,
-            level_nums: &mut HashMap<i32, i32>,
-        ) -> bool {
-            if root.is_none() {
-                return true;
-            }
+        Solution::dfs(root, 0, &mut level_nums)
+    }
 
-            let root = root.unwrap();
-            let root = root.borrow();
-
-            // even level and even val
-            if l % 2 == 0 && root.val % 2 == 0 {
-                return false;
-            }
-
-            // odd level and odd val
-            if l % 2 != 0 && root.val % 2 != 0 {
-                return false;
-            }
-
-            if let Some(prev_level_val) = level_nums.get(&l) {
-                if l % 2 == 0 && *prev_level_val >= root.val {
-                    return false;
-                }
-
-                if l % 2 != 0 && *prev_level_val <= root.val {
-                    return false;
-                }
-            };
-
-            level_nums.insert(l, root.val);
-
-            dfs(root.left.clone(), l + 1, level_nums) && dfs(root.right.clone(), l + 1, level_nums)
+    fn dfs(
+        root: Option<Rc<RefCell<TreeNode>>>,
+        l: i32,
+        level_nums: &mut HashMap<i32, i32>,
+    ) -> bool {
+        if root.is_none() {
+            return true;
         }
 
-        dfs(root, 0, &mut level_nums)
+        let root = root.unwrap();
+        let root = root.borrow();
+
+        // even level and even val
+        if l % 2 == 0 && root.val % 2 == 0 {
+            return false;
+        }
+
+        // odd level and odd val
+        if l % 2 != 0 && root.val % 2 != 0 {
+            return false;
+        }
+
+        if let Some(prev_level_val) = level_nums.get(&l) {
+            if l % 2 == 0 && *prev_level_val >= root.val {
+                return false;
+            }
+
+            if l % 2 != 0 && *prev_level_val <= root.val {
+                return false;
+            }
+        };
+
+        level_nums.insert(l, root.val);
+
+        Solution::dfs(root.left.clone(), l + 1, level_nums)
+            && Solution::dfs(root.right.clone(), l + 1, level_nums)
     }
 }
 
