@@ -35,41 +35,40 @@ impl Solution {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::helpers::listnode::build_list_from_vec;
 
     #[test]
     fn test_remove_nth_from_end_1() {
-        let head = build_list_from_vec(vec![1, 2, 3, 4, 5]);
+        let head = ListNode::build_list_from_vec(vec![1, 2, 3, 4, 5]);
         let n = 2;
 
-        let expected = build_list_from_vec(vec![1, 2, 3, 5]);
+        let expected = ListNode::build_list_from_vec(vec![1, 2, 3, 5]);
         assert_eq!(Solution::remove_nth_from_end(head, n), expected);
     }
 
     #[test]
     fn test_remove_nth_from_end_2() {
-        let head = build_list_from_vec(vec![1]);
+        let head = ListNode::build_list_from_vec(vec![1]);
         let n = 1;
 
-        let expected = build_list_from_vec(vec![]);
+        let expected = ListNode::build_list_from_vec(vec![]);
         assert_eq!(Solution::remove_nth_from_end(head, n), expected);
     }
 
     #[test]
     fn test_remove_nth_from_end_3() {
-        let head = build_list_from_vec(vec![1, 2]);
+        let head = ListNode::build_list_from_vec(vec![1, 2]);
         let n = 1;
 
-        let expected = build_list_from_vec(vec![1]);
+        let expected = ListNode::build_list_from_vec(vec![1]);
         assert_eq!(Solution::remove_nth_from_end(head, n), expected);
     }
 
     #[test]
     fn test_remove_nth_from_end_4() {
-        let head = build_list_from_vec(vec![1, 2, 3, 4, 5]);
+        let head = ListNode::build_list_from_vec(vec![1, 2, 3, 4, 5]);
         let n = 3;
 
-        let expected = build_list_from_vec(vec![1, 2, 4, 5]);
+        let expected = ListNode::build_list_from_vec(vec![1, 2, 4, 5]);
         assert_eq!(Solution::remove_nth_from_end(head, n), expected);
     }
 }
