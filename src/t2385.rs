@@ -76,21 +76,21 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_amount_of_time_1() {
         let nodes = vec![1, 5, 3, NONE, 4, 10, 6, 9, 2];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::amount_of_time(root, 3), 4);
     }
 
     #[test]
     fn test_amount_of_time_2() {
         let nodes = vec![1];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::amount_of_time(root, 1), 0);
     }
 }

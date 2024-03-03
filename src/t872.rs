@@ -41,14 +41,14 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_leaf_similar_1() {
-        let root1 = build_tree_from_vec(vec![3, 5, 1, 6, 2, 9, 8, NONE, NONE, 7, 4]);
-        let root2 = build_tree_from_vec(vec![
+        let root1 = TreeNode::build_tree_from_vec(vec![3, 5, 1, 6, 2, 9, 8, NONE, NONE, 7, 4]);
+        let root2 = TreeNode::build_tree_from_vec(vec![
             3, 5, 1, 6, 7, 4, 2, NONE, NONE, NONE, NONE, NONE, NONE, 9, 8,
         ]);
         assert!(Solution::leaf_similar(root1, root2));
@@ -56,8 +56,8 @@ mod tests {
 
     #[test]
     fn test_leaf_similar_2() {
-        let root1 = build_tree_from_vec(vec![1, 2, 3]);
-        let root2 = build_tree_from_vec(vec![1, 3, 2]);
+        let root1 = TreeNode::build_tree_from_vec(vec![1, 2, 3]);
+        let root2 = TreeNode::build_tree_from_vec(vec![1, 3, 2]);
         assert!(!Solution::leaf_similar(root1, root2));
     }
 }

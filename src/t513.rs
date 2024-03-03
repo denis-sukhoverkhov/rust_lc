@@ -36,19 +36,19 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_find_bottom_left_value_1() {
-        let root = build_tree_from_vec(vec![2, 1, 3]);
+        let root = TreeNode::build_tree_from_vec(vec![2, 1, 3]);
         assert_eq!(Solution::find_bottom_left_value(root), 1);
     }
 
     #[test]
     fn test_find_bottom_left_value_2() {
-        let root = build_tree_from_vec(vec![1, 2, 3, 4, NONE, 5, 6, NONE, NONE, 7]);
+        let root = TreeNode::build_tree_from_vec(vec![1, 2, 3, 4, NONE, 5, 6, NONE, NONE, 7]);
         assert_eq!(Solution::find_bottom_left_value(root), 7);
     }
 }

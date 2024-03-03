@@ -27,28 +27,28 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_inorder_traversal_1() {
         let nodes = vec![1, NONE, 2, 3];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::inorder_traversal(root), vec![1, 3, 2]);
     }
 
     #[test]
     fn test_inorder_traversal_2() {
         let nodes = vec![];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::inorder_traversal(root), vec![]);
     }
 
     #[test]
     fn test_inorder_traversal_3() {
         let nodes = vec![1];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::inorder_traversal(root), vec![1]);
     }
 }

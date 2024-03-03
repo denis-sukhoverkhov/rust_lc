@@ -36,21 +36,21 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_range_sum_bst_1() {
         let nodes = vec![10, 5, 15, 3, 7, NONE, 18];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::range_sum_bst(root, 7, 15), 32);
     }
 
     #[test]
     fn test_range_sum_bst_2() {
         let nodes = vec![10, 5, 15, 3, 7, 13, 18, 1, NONE, 6];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::range_sum_bst(root, 6, 10), 23);
     }
 }

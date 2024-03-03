@@ -32,21 +32,21 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_tree2str_1() {
         let nodes = vec![1, 2, 3, 4];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::tree2str(root), "1(2(4))(3)");
     }
 
     #[test]
     fn test_tree2str_2() {
         let nodes = vec![1, 2, 3, NONE, 4];
-        let root = build_tree_from_vec(nodes);
+        let root = TreeNode::build_tree_from_vec(nodes);
         assert_eq!(Solution::tree2str(root), "1(2()(4))(3)");
     }
 }

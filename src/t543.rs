@@ -34,25 +34,24 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::build_tree_from_vec;
 
     use super::*;
 
     #[test]
     fn test_diameter_of_binary_tree_1() {
-        let root = build_tree_from_vec(vec![1, 2, 3, 4, 5]);
+        let root = TreeNode::build_tree_from_vec(vec![1, 2, 3, 4, 5]);
         assert_eq!(Solution::diameter_of_binary_tree(root), 3);
     }
 
     #[test]
     fn test_diameter_of_binary_tree_2() {
-        let root = build_tree_from_vec(vec![1, 2]);
+        let root = TreeNode::build_tree_from_vec(vec![1, 2]);
         assert_eq!(Solution::diameter_of_binary_tree(root), 1);
     }
 
     #[test]
     fn test_diameter_of_binary_tree_3() {
-        let root = build_tree_from_vec(vec![1]);
+        let root = TreeNode::build_tree_from_vec(vec![1]);
         assert_eq!(Solution::diameter_of_binary_tree(root), 0);
     }
 }

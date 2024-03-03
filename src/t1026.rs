@@ -50,25 +50,26 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_max_ancestor_diff_1() {
-        let root = build_tree_from_vec(vec![8, 3, 10, 1, 6, NONE, 14, NONE, NONE, 4, 7, 13]);
+        let root =
+            TreeNode::build_tree_from_vec(vec![8, 3, 10, 1, 6, NONE, 14, NONE, NONE, 4, 7, 13]);
         assert_eq!(Solution::max_ancestor_diff(root), 7);
     }
 
     #[test]
     fn test_max_ancestor_diff_2() {
-        let root = build_tree_from_vec(vec![1, NONE, 2, NONE, 0, 3]);
+        let root = TreeNode::build_tree_from_vec(vec![1, NONE, 2, NONE, 0, 3]);
         assert_eq!(Solution::max_ancestor_diff(root), 3);
     }
 
     #[test]
     fn test_max_ancestor_diff_3() {
-        let root = build_tree_from_vec(vec![
+        let root = TreeNode::build_tree_from_vec(vec![
             7, 5, 12, 11, 0, 2, NONE, 4, 17, 6, 19, NONE, 16, 18, NONE, NONE, NONE, NONE, 9, 14,
             10, NONE, NONE, NONE, NONE, NONE, NONE, NONE, NONE, 3, 1, NONE, NONE, 8, NONE, 13,
             NONE, NONE, 15,

@@ -38,7 +38,7 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
@@ -48,8 +48,8 @@ mod tests {
         let q = vec![1, 2, 3];
 
         assert!(Solution::is_same_tree(
-            build_tree_from_vec(p),
-            build_tree_from_vec(q)
+            TreeNode::build_tree_from_vec(p),
+            TreeNode::build_tree_from_vec(q)
         ));
     }
 
@@ -59,8 +59,8 @@ mod tests {
         let q = vec![1, NONE, 2];
 
         assert!(!Solution::is_same_tree(
-            build_tree_from_vec(p),
-            build_tree_from_vec(q)
+            TreeNode::build_tree_from_vec(p),
+            TreeNode::build_tree_from_vec(q)
         ));
     }
 
@@ -70,8 +70,8 @@ mod tests {
         let q = vec![1, 1, 2];
 
         assert!(!Solution::is_same_tree(
-            build_tree_from_vec(p),
-            build_tree_from_vec(q)
+            TreeNode::build_tree_from_vec(p),
+            TreeNode::build_tree_from_vec(q)
         ));
     }
 }

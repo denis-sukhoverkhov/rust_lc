@@ -49,37 +49,38 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_pseudo_palindromic_paths_1() {
-        let root = build_tree_from_vec(vec![2, 3, 1, 3, 1, NONE, 1]);
+        let root = TreeNode::build_tree_from_vec(vec![2, 3, 1, 3, 1, NONE, 1]);
         assert_eq!(Solution::pseudo_palindromic_paths(root), 2);
     }
 
     #[test]
     fn test_pseudo_palindromic_paths_2() {
-        let root = build_tree_from_vec(vec![2, 1, 1, 1, 3, NONE, NONE, NONE, NONE, NONE, 1]);
+        let root =
+            TreeNode::build_tree_from_vec(vec![2, 1, 1, 1, 3, NONE, NONE, NONE, NONE, NONE, 1]);
         assert_eq!(Solution::pseudo_palindromic_paths(root), 1);
     }
 
     #[test]
     fn test_pseudo_palindromic_paths_3() {
-        let root = build_tree_from_vec(vec![9]);
+        let root = TreeNode::build_tree_from_vec(vec![9]);
         assert_eq!(Solution::pseudo_palindromic_paths(root), 1);
     }
 
     #[test]
     fn test_pseudo_palindromic_paths_4() {
-        let root = build_tree_from_vec(vec![]);
+        let root = TreeNode::build_tree_from_vec(vec![]);
         assert_eq!(Solution::pseudo_palindromic_paths(root), 0);
     }
 
     #[test]
     fn test_pseudo_palindromic_paths_5() {
-        let root = build_tree_from_vec(vec![
+        let root = TreeNode::build_tree_from_vec(vec![
             9, 5, 4, 5, NONE, 2, 6, 2, 5, NONE, 8, 3, 9, 2, 3, 1, 1, NONE, 4, 5, 4, 2, 2, 6, 4,
             NONE, NONE, 1, 7, NONE, 5, 4, 7, NONE, NONE, 7, NONE, 1, 5, 6, 1, NONE, NONE, NONE,
             NONE, 9, 2, NONE, 9, 7, 2, 1, NONE, NONE, NONE, 6, NONE, NONE, NONE, NONE, NONE, NONE,

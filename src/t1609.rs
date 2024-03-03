@@ -58,41 +58,42 @@ impl Solution {
 
 #[cfg(test)]
 mod tests {
-    use crate::helpers::treenode::{build_tree_from_vec, NONE};
+    use crate::helpers::treenode::NONE;
 
     use super::*;
 
     #[test]
     fn test_is_even_odd_tree_1() {
-        let root = build_tree_from_vec(vec![1, 10, 4, 3, NONE, 7, 9, 12, 8, 6, NONE, NONE, 2]);
+        let root =
+            TreeNode::build_tree_from_vec(vec![1, 10, 4, 3, NONE, 7, 9, 12, 8, 6, NONE, NONE, 2]);
 
         assert!(Solution::is_even_odd_tree(root))
     }
 
     #[test]
     fn test_is_even_odd_tree_2() {
-        let root = build_tree_from_vec(vec![5, 4, 2, 3, 3, 7]);
+        let root = TreeNode::build_tree_from_vec(vec![5, 4, 2, 3, 3, 7]);
 
         assert!(!Solution::is_even_odd_tree(root))
     }
 
     #[test]
     fn test_is_even_odd_tree_3() {
-        let root = build_tree_from_vec(vec![5, 9, 1, 3, 5, 7]);
+        let root = TreeNode::build_tree_from_vec(vec![5, 9, 1, 3, 5, 7]);
 
         assert!(!Solution::is_even_odd_tree(root))
     }
 
     #[test]
     fn test_is_even_odd_tree_4() {
-        let root = build_tree_from_vec(vec![9]);
+        let root = TreeNode::build_tree_from_vec(vec![9]);
 
         assert!(Solution::is_even_odd_tree(root))
     }
 
     #[test]
     fn test_is_even_odd_tree_6() {
-        let root = build_tree_from_vec(vec![4]);
+        let root = TreeNode::build_tree_from_vec(vec![4]);
 
         assert!(!Solution::is_even_odd_tree(root))
     }
