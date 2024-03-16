@@ -69,6 +69,7 @@ pub mod t451;
 pub mod t455;
 pub mod t49;
 pub mod t513;
+pub mod t525;
 pub mod t543;
 pub mod t606;
 pub mod t645;
