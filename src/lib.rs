@@ -23,6 +23,7 @@ pub mod t1609;
 pub mod t1642;
 pub mod t1657;
 pub mod t1662;
+pub mod t1669;
 pub mod t1685;
 pub mod t1688;
 pub mod t169;
