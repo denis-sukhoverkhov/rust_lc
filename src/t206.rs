@@ -14,12 +14,11 @@ impl Solution {
             next: None,
         });
 
-        let mut current = head.as_mut();
-        while let Some(n) = current {
-            let tmp = new_head.next.take();
-            new_head.next = Some(n.clone());
-            new_head.next.as_mut().unwrap().next = tmp.clone();
-            current = n.next.as_mut();
+        while let Some(mut n) = head {
+            let tmp = new_head.next;
+            head = n.next;
+            n.next = tmp;
+            new_head.next = Some(n);
         }
 
         new_head.next
