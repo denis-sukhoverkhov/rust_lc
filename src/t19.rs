@@ -17,7 +17,7 @@ impl Solution {
         let mut h2 = &(sentinel.clone());
 
         for _ in 0..n {
-            h2 = &h2.as_ref()?.next;
+            h2 = &(h2.as_ref()?.next);
         }
 
         let mut h1 = &mut sentinel;

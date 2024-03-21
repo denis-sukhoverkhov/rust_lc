@@ -25,9 +25,9 @@ impl ListNode {
 
     pub fn build_vec_from_list(mut h: Option<Box<ListNode>>) -> Vec<i32> {
         let mut res = vec![];
-        while let Some(ref n) = h {
+        while let Some(n) = h {
             res.push(n.val);
-            h = n.next.clone();
+            h = n.next;
         }
 
         res
