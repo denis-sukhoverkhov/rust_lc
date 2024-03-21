@@ -37,6 +37,7 @@ pub mod t19;
 pub mod t1903;
 pub mod t191;
 pub mod t198;
+pub mod t206;
 pub mod t2108;
 pub mod t2125;
 pub mod t2147;
