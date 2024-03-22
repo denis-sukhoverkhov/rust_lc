@@ -1,0 +1,25 @@
+name: bencher
+
+on: [push]
+jobs:
+  benchmark_with_bencher:
+    name: Continuous Benchmarking with Bencher
+    runs-on: ubuntu-latest
+    env:
+      BENCHER_PROJECT: leetcode-tasks
+      BENCHER_TESTBED: ubuntu-latest
+      BENCHER_ADAPTER: shell_hyperfine
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bencherdev/bencher@main
+      - name: Install hyperfine
+        run: |
+          cargo install --locked hyperfine
+      - name: Track Benchmarks with Bencher
+        run: |
+          bencher run \
+          --branch "$GITHUB_REF_NAME" \
+          --token "${{ secrets.BENCHER_API_TOKEN }}" \
+          --file results.json \
+          --err \
+          "hyperfine --export-json results.json 'cargo test'"

@@ -8,4 +8,5 @@ edition = "2021"
 
 
 [dependencies]
+hyperfine = "1.18.0"
 rand = "0.8.5"
