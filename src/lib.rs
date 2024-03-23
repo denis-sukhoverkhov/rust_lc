@@ -13,6 +13,7 @@ pub mod t1291;
 pub mod t1347;
 pub mod t141;
 pub mod t1422;
+pub mod t143;
 pub mod t1436;
 pub mod t1457;
 pub mod t1464;
