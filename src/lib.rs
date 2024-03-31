@@ -51,6 +51,7 @@ pub mod t238;
 pub mod t2385;
 pub mod t2402;
 pub mod t242;
+pub mod t2444;
 pub mod t2482;
 pub mod t2485;
 pub mod t2540;
