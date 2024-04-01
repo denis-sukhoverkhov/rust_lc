@@ -83,6 +83,7 @@ pub mod t513;
 pub mod t525;
 pub mod t543;
 pub mod t57;
+pub mod t58;
 pub mod t606;
 pub mod t621;
 pub mod t645;
