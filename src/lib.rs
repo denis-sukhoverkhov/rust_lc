@@ -92,6 +92,7 @@ pub mod t606;
 pub mod t621;
 pub mod t645;
 pub mod t647;
+pub mod t678;
 pub mod t70;
 pub mod t713;
 pub mod t739;
