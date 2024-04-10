@@ -11,7 +11,7 @@ impl Solution {
         let mut stack_asterisks = vec![];
 
         for (idx, c) in s.chars().enumerate() {
-            if c == ')' && stack_braces.len() == 0 && stack_asterisks.len() == 0 {
+            if c == ')' && stack_braces.is_empty() && stack_asterisks.is_empty() {
                 return false;
             }
 
@@ -25,12 +25,12 @@ impl Solution {
                 continue;
             }
 
-            if c == ')' && stack_braces.len() > 0 {
+            if c == ')' && !stack_braces.is_empty() {
                 stack_braces.pop();
                 continue;
             }
 
-            if c == ')' && stack_asterisks.len() > 0 {
+            if c == ')' && !stack_asterisks.is_empty() {
                 stack_asterisks.pop();
                 continue;
             }
