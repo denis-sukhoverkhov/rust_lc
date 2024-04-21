@@ -19,21 +19,21 @@ impl Solution {
                 curr.push(root.val);
 
                 if root.left.is_none() && root.right.is_none() {
-                    let reversed: Vec<i32> = curr.into_iter().map(|x| *x).rev().collect();
+                    let reversed: Vec<&i32> = curr.iter().rev().collect();
 
                     let mut i = 0;
                     let mut ct = 0;
                     while i < reversed.len() && i < s.len() {
-                        if s[i] > reversed[i] {
-                            *s = reversed.clone();
+                        if s[i] > *reversed[i] {
+                            *s = reversed.iter().map(|&x| *x).collect();
                             break;
                         }
 
-                        if s[i] < reversed[i] {
+                        if s[i] < *reversed[i] {
                             break;
                         }
 
-                        if s[i] == reversed[i] {
+                        if s[i] == *reversed[i] {
                             ct += 1;
                         }
 
@@ -42,7 +42,7 @@ impl Solution {
 
                     let max_ln = std::cmp::min(reversed.len(), s.len());
                     if ct == max_ln && reversed.len() < s.len() {
-                        *s = reversed.clone();
+                        *s = reversed.iter().map(|&x| *x).collect();
                     }
                 }
 

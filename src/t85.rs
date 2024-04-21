@@ -17,9 +17,9 @@ impl Solution {
             }
 
             let mut stack: Vec<(i32, i32)> = vec![];
-            for idx in 0..dp.len() {
+            (0..dp.len()).for_each(|idx| {
                 if dp[idx] == 0 && stack.is_empty() {
-                    continue;
+                    return;
                 }
 
                 let mut new_idx = idx as i32;
@@ -34,11 +34,11 @@ impl Solution {
                 }
 
                 if dp[idx] == 0 {
-                    continue;
+                    return;
                 }
 
                 stack.push((new_idx, dp[idx]));
-            }
+            });
 
             // if there is something left on the stack
             for (i, h) in stack.iter() {
