@@ -77,6 +77,7 @@ pub mod t2962;
 pub mod t2966;
 pub mod t300;
 pub mod t3005;
+pub mod t310;
 pub mod t349;
 pub mod t368;
 pub mod t380;
