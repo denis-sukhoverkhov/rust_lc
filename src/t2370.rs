@@ -13,9 +13,9 @@ impl Solution {
             let idx = c as u32 - 'a' as u32;
 
             let mut longest = 1;
-            for i in 0..26 {
+            for (i, v) in dp.iter().enumerate() {
                 if (i as i32 - idx as i32).abs() <= k {
-                    longest = longest.max(1 + dp[i])
+                    longest = longest.max(1 + *v)
                 }
             }
 
