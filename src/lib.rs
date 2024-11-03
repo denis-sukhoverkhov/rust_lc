@@ -112,6 +112,7 @@ pub mod t713;
 pub mod t739;
 pub mod t79;
 pub mod t791;
+pub mod t796;
 pub mod t85;
 pub mod t867;
 pub mod t872;
