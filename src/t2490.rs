@@ -2,6 +2,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn is_circular_sentence(sentence: String) -> bool {
         let first = sentence.chars().next();
         let last = sentence.chars().last();

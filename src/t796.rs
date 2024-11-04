@@ -2,6 +2,7 @@
 struct Solution;
 
 impl Solution {
+    #[allow(dead_code)]
     pub fn rotate_string(s: String, goal: String) -> bool {
         if s.len() != goal.len() {
             return false;
